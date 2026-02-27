@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriela Matos | Psicóloga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bege: #F3EFEA;
+      --branco: #FAFAF8;
+      --azul: #305D73;
+      --verde: #B6B99E;
+      --areia: #E6DCD0;
+      --conforto: #E0E4DC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bege);
+      color: var(--azul);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: var(--branco);
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--azul);
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: var(--azul);
+      text-decoration: none;
+      margin-left: 1.4rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.7)),
+      url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      max-width: 700px;
+      color: var(--azul);
+      background-color: rgba(250,250,250,0.6);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+    }
+
+    .hero button {
+      margin-top: 2rem;
+      padding: 0.9rem 2rem;
+      background-color: var(--azul);
+      color: var(--branco);
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: var(--verde);
+    }
+
+    section {
+      padding: 5rem 3rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .about img {
+      width: 400px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      color: var(--azul);
+    }
+
+    .services {
+      background-color: var(--branco);
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .services h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: var(--bege);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .card h4 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.8rem;
+      color: var(--azul);
+    }
+
+    .quote {
+      background-color: var(--areia);
+      color: var(--azul);
+      text-align: center;
+      padding: 5rem 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      border-top: 2px solid var(--verde);
+      border-bottom: 2px solid var(--verde);
+    }
+
+    .contents {
+      background-color: var(--branco);
+      border-radius: 12px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+    }
+
+    .contents h3 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 2rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .content-grid div {
+      background-color: var(--conforto);
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    .contact {
+      text-align: center;
+      background-color: var(--branco);
+      border-radius: 10px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    }
+
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    button[type="submit"] {
+      width: fit-content;
+      align-self: center;
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: var(--verde);
+    }
+
+    footer {
+      background-color: var(--areia);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--azul);
+      letter-spacing: 0.3px;
+    }
+
+    /* Botão WhatsApp flutuante */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--verde);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      z-index: 999;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-float img {
+      width: 32px;
+      height: 32px;
+    }
+
+    @media(max-width: 768px){
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Gabriela Matos</h1>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#terapia">Terapia</a>
+    <a href="#conteudos">Conteúdos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>“Desacelerar não é parar — é se ouvir antes de se perder.”</h2>
+  <button onclick="document.getElementById('contato').scrollIntoView({behavior:'smooth'})">Agende sua sessão</button>
+</section>
+
+<section id="sobre" class="about">
+  <img src="https://images.unsplash.com/photo-1600181953420-16e3d8bf8b09?auto=format&fit=crop&w=800&q=60" alt="Gabriela Matos Psicóloga">
+  <div class="about-text">
+    <h3>Sobre mim</h3>
+    <p>Sou psicóloga clínica especializada em Terapia do Esquema. Acredito que a psicoterapia é um espaço de pausa e reconexão: um convite para olhar para si com gentileza e consciência. Aqui, o cuidado se transforma em processo de acolhimento.</p>
+  </div>
+</section>
+
+<section id="terapia" class="services">
+  <h3>Abordagem Terapêutica</h3>
+  <div class="service-cards">
+    <div class="card">
+      <h4>Terapia do Esquema</h4>
+      <p>Compreender e transformar padrões emocionais e comportamentais repetitivos.</p>
+    </div>
+    <div class="card">
+      <h4>Autocompaixão</h4>
+      <p>Aprender a se tratar com leveza e respeito em meio às exigências internas.</p>
+    </div>
+    <div class="card">
+      <h4>Relações Saudáveis</h4>
+      <p>Construir conexões baseadas em segurança emocional e autenticidade.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <p>“Algumas dores não começaram em você,<br>mas podem ser acolhidas por você.”</p>
+</section>
+
+<section id="conteudos" class="contents">
+  <h3>Conteúdos e Reflexões</h3>
+  <div class="content-grid">
+    <div>
+      <h4>O cansaço que o sono não cura</h4>
+      <p>Nem todo cansaço é físico — alguns pedem ternura. A autocompaixão é o primeiro descanso.</p>
+    </div>
+    <div>
+      <h4>Desacelerar é se escutar</h4>
+      <p>Fevereiro pode ser menos sobre acelerar e mais sobre se olhar com cuidado.</p>
+    </div>
+    <div>
+      <h4>Relacionamentos e limites</h4>
+      <p>Cuidar do vínculo também é cuidar de si. Limite é carinho com o próprio espaço.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="contact">
+  <h3>Entre em contato</h3>
+  <form>
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <textarea rows="4" placeholder="Sua mensagem"></textarea>
+    <button type="submit">Enviar mensagem</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Gabriela Matos | Psicóloga · CRP 00/0000 <br> Desenvolvido com propósito e calma 🌿
+</footer>
+
+<!-- Botão WhatsApp Flutuante -->
+<a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank" aria-label="Converse no WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+</body>
+</html>
